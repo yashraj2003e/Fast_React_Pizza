@@ -2,7 +2,7 @@ import LinkButton from '../../ui/LinkButton';
 import Button from '../../ui/Button';
 import CartItem from './CartItem';
 import { useDispatch, useSelector } from 'react-redux';
-import { clearItem, getCart } from './cartSlice';
+import { clearCart, getCart } from './cartSlice';
 import Emptycart from './EmptyCart';
 
 function Cart() {
@@ -10,7 +10,7 @@ function Cart() {
   const username = useSelector((store) => store.user.username);
   const dispatch = useDispatch();
   function handleClearCart() {
-    dispatch(clearItem());
+    dispatch(clearCart());
   }
 
   if (!cart.length) return <Emptycart />;
